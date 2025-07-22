@@ -1,0 +1,25 @@
+services:
+  ubuntu-desktop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu-desktop
+    shm_size: '8gb'
+    environment:
+      - VNC_PW=${KASM_VNC_PW}
+      - TZ=Asia/Seoul
+    ports:
+      - ${VNC_PORT}:6901
+      - ${SSH_PORT}:22
+      - "58000-58500:58000-58500"
+    volumes:
+      - type: volume
+        source: home
+        target: /home
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    #restart: unless-stopped
+
+volumes:
+  home:
+

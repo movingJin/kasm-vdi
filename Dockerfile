@@ -29,7 +29,6 @@ RUN mkdir /home/kasm-user/.ssh \
      && chmod 700 /home/kasm-user/.ssh \
      && chmod 600 /home/kasm-user/.ssh/authorized_keys \
      && chmod 755 /home/kasm-user \
-     && echo '\nexport LOGIN_SHELL_INITIALIZED=true' >> /home/kasm-user/.bashrc \
      && /usr/sbin/sshd \
      && /usr/sbin/usermod --shell /bin/bash kasm-user
 

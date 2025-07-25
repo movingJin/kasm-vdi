@@ -1,5 +1,25 @@
 # kasm-vdi
-kasm-ubuntu 를 사용한 VDI Docker image
+kasm-ubuntu 를 사용한 VDI Docker image.
+원격에서 React-Native, Java, 서버 개발을 목적으로 구성된 VDI 입니다.
+#### 구성된 개발환경:
+Java: openjdk-17-jdk
+<br />
+Python: 3.10
+<br />
+Android-studio
+<br />
+IntelliJ-Community
+<br />
+PyCharm-Community
+
+#### React-Native에서 가상 Device로 연결시:
+```
+adb connect 192.168.0.18:5555 #원격 단말 연결
+npm start #nodejs 서버 실행
+react-native run-android --port 8082 #원격단말에 빌드된 앱 배포
+npm run start-react #react-native web 실행
+```
+
 
 ### 1. Create a `.env` file(Mandatory) and Copy `id_rsa.pub` file from client for ssh.(If you want) 
 
